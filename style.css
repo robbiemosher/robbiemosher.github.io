@@ -85,9 +85,17 @@ img {
 }
 
 .photo-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 12px;
+    columns: 2;
+    column-gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.photo-grid img {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 0 1rem;
+    break-inside: avoid;
 }
 
 footer {
@@ -122,7 +130,7 @@ footer {
     }
 
     .photo-grid {
-        grid-template-columns: 1fr;
+        columns: 1;
     }
 
     footer {
