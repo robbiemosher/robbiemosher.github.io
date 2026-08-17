@@ -134,7 +134,7 @@
                     &nbsp;·&nbsp;
                     Thrust: <strong>W/S</strong> or <strong>↑/↓</strong>
                     &nbsp;·&nbsp;
-                    Shoot: <strong>Space</strong>
+                    Shoot: <strong>Space</strong> &nbsp;·&nbsp; Ability: <strong>E</strong>
                 </span>
 
                 <button id="soundButton" type="button">Sound: On</button>
@@ -158,9 +158,9 @@
             </div>
 
             <p class="game-help">
-                You have three lives. Clear every asteroid to advance. Later levels reuse similar asteroid counts
-                at higher speeds, and the final three levels introduce hostile ships that fire back.
-                Your high score is saved in this browser. Press Enter after game over to play again.
+                You begin with three lives and gain one life after every cleared level. Fast clears earn more
+                upgrade points. Between levels you can buy shields or a two-second spinning laser.
+                Press <strong>E</strong> to use the spinning laser once purchased.
             </p>
         </div>
 
@@ -188,15 +188,21 @@
 
         const LEVELS = [
             { asteroids: 6, asteroidSpeed: 0.85, enemies: 0 },
-            { asteroids: 8, asteroidSpeed: 0.95, enemies: 0 },
-            { asteroids: 10, asteroidSpeed: 1.05, enemies: 0 },
-            { asteroids: 10, asteroidSpeed: 1.18, enemies: 0 },
-            { asteroids: 10, asteroidSpeed: 1.32, enemies: 0 },
-            { asteroids: 12, asteroidSpeed: 1.45, enemies: 0 },
-            { asteroids: 12, asteroidSpeed: 1.55, enemies: 1 },
-            { asteroids: 12, asteroidSpeed: 1.65, enemies: 2 },
-            { asteroids: 14, asteroidSpeed: 1.80, enemies: 3 }
+            { asteroids: 7, asteroidSpeed: 0.95, enemies: 0 },
+            { asteroids: 8, asteroidSpeed: 1.05, enemies: 0 },
+            { asteroids: 8, asteroidSpeed: 1.18, enemies: 0 },
+            { asteroids: 8, asteroidSpeed: 1.32, enemies: 0 },
+            { asteroids: 7, asteroidSpeed: 1.45, enemies: 0 },
+            { asteroids: 4, asteroidSpeed: 1.65, enemies: 1 },
+            { asteroids: 4, asteroidSpeed: 1.82, enemies: 2 },
+            { asteroids: 4, asteroidSpeed: 2.00, enemies: 3 }
         ];
+
+        const UPGRADE_COSTS = {
+            shield: 120,
+            shieldPlus: 220,
+            spinningLaser: 300
+        };
 
         const keys = Object.create(null);
 
@@ -218,6 +224,13 @@
         let lastTime;
         let elapsed;
         let screenShake;
+        let levelElapsed;
+        let upgradePoints;
+        let upgradeMenu;
+        let pendingNextLevel;
+        let shieldHits;
+        let spinningLaserCharges;
+        let spinningLaserTimer;
         let soundEnabled = true;
 
         let highScore = Number(localStorage.getItem("asteroidDodgerHighScore")) || 0;
@@ -336,6 +349,13 @@
             levelTransition = 0;
             elapsed = 0;
             screenShake = 0;
+            levelElapsed = 0;
+            upgradePoints = 0;
+            upgradeMenu = false;
+            pendingNextLevel = false;
+            shieldHits = 0;
+            spinningLaserCharges = 0;
+            spinningLaserTimer = 0;
             lastTime = performance.now();
 
             startLevel();
@@ -431,12 +451,82 @@
             }
 
             levelTransition = 1.8;
+            levelElapsed = 0;
+            upgradeMenu = false;
+            pendingNextLevel = false;
             player.x = WIDTH / 2;
             player.y = HEIGHT / 2;
             player.vx = 0;
             player.vy = 0;
             player.angle = -Math.PI / 2;
             player.invulnerable = 1.5;
+        }
+
+
+        function levelReward() {
+            const parTime = 34 + level * 4;
+            const speedBonus = Math.max(0, Math.round((parTime - levelElapsed) * 7));
+            return 100 + speedBonus;
+        }
+
+        function openUpgradeMenu() {
+            upgradePoints += levelReward();
+            lives += 1;
+
+            if (level >= LEVELS.length - 1) {
+                victory = true;
+                if (score > highScore) {
+                    highScore = score;
+                    localStorage.setItem("asteroidDodgerHighScore", highScore);
+                }
+                return;
+            }
+
+            upgradeMenu = true;
+            pendingNextLevel = true;
+        }
+
+        function buyUpgrade(type) {
+            if (!upgradeMenu) return;
+            const cost = UPGRADE_COSTS[type];
+
+            if (upgradePoints < cost) {
+                tone(110, 0.12, 0.025, "square", 80);
+                return;
+            }
+
+            upgradePoints -= cost;
+
+            if (type === "shield") shieldHits += 1;
+            if (type === "shieldPlus") shieldHits += 2;
+            if (type === "spinningLaser") spinningLaserCharges += 1;
+
+            tone(620, 0.12, 0.025, "sine", 880);
+        }
+
+        function continueToNextLevel() {
+            if (!upgradeMenu || !pendingNextLevel) return;
+            upgradeMenu = false;
+            pendingNextLevel = false;
+            level++;
+            startLevel();
+        }
+
+        function activateSpinningLaser() {
+            if (gameOver || victory || upgradeMenu || spinningLaserCharges <= 0 || spinningLaserTimer > 0) return;
+            spinningLaserCharges--;
+            spinningLaserTimer = 2.0;
+            tone(760, 0.15, 0.03, "sawtooth", 420);
+        }
+
+        function useShield() {
+            if (shieldHits <= 0) return false;
+            shieldHits--;
+            player.invulnerable = 0.7;
+            screenShake = 0.12;
+            createExplosion(player.x, player.y, 14, 100);
+            tone(320, 0.18, 0.04, "sine", 700);
+            return true;
         }
 
         function shoot() {
@@ -552,6 +642,8 @@
         function damagePlayer(asteroidIndex) {
             asteroids.splice(asteroidIndex, 1);
 
+            if (useShield()) return;
+
             lives--;
             player.invulnerable = 1.8;
             screenShake = 0.35;
@@ -577,7 +669,14 @@
                 return;
             }
 
+            if (upgradeMenu) {
+                updateParticles(delta);
+                updateStars(delta);
+                return;
+            }
+
             elapsed += delta;
+            levelElapsed += delta;
             updateStars(delta);
 
             if (levelTransition > 0) {
@@ -629,6 +728,7 @@
             if (player.cooldown > 0) player.cooldown -= delta;
             if (player.invulnerable > 0) player.invulnerable -= delta;
             if (screenShake > 0) screenShake -= delta;
+            if (spinningLaserTimer > 0) spinningLaserTimer -= delta;
 
             for (const bullet of bullets) {
                 bullet.x += bullet.vx * delta;
@@ -717,6 +817,46 @@
                 }
             }
 
+            if (spinningLaserTimer > 0) {
+                const laserRadius = 135;
+
+                for (let ai = asteroids.length - 1; ai >= 0; ai--) {
+                    const asteroid = asteroids[ai];
+                    const dx = asteroid.x - player.x;
+                    const dy = asteroid.y - player.y;
+                    if (dx * dx + dy * dy <= (laserRadius + asteroid.radius) ** 2) {
+                        asteroids.splice(ai, 1);
+                        score += 10;
+                        createExplosion(asteroid.x, asteroid.y, 12, 135);
+                        soundExplosion();
+                    }
+                }
+
+                for (let ei = enemyShips.length - 1; ei >= 0; ei--) {
+                    const enemy = enemyShips[ei];
+                    const dx = enemy.x - player.x;
+                    const dy = enemy.y - player.y;
+                    if (dx * dx + dy * dy <= (laserRadius + enemy.radius) ** 2) {
+                        enemy.health -= 5;
+                        if (enemy.health <= 0) {
+                            enemyShips.splice(ei, 1);
+                            score += 50;
+                            createExplosion(enemy.x, enemy.y, 24, 180);
+                            soundExplosion();
+                        }
+                    }
+                }
+
+                for (let i = enemyBullets.length - 1; i >= 0; i--) {
+                    const bullet = enemyBullets[i];
+                    const dx = bullet.x - player.x;
+                    const dy = bullet.y - player.y;
+                    if (dx * dx + dy * dy <= laserRadius * laserRadius) {
+                        enemyBullets.splice(i, 1);
+                    }
+                }
+            }
+
             for (let ei = enemyShips.length - 1; ei >= 0; ei--) {
                 const enemy = enemyShips[ei];
 
@@ -758,6 +898,9 @@
 
                     if (dx * dx + dy * dy < r * r) {
                         enemyBullets.splice(i, 1);
+
+                        if (useShield()) break;
+
                         lives--;
                         player.invulnerable = 1.8;
                         screenShake = 0.35;
@@ -783,23 +926,13 @@
 
             if (
                 !gameOver &&
+                !upgradeMenu &&
                 levelTransition <= 0 &&
                 asteroids.length === 0 &&
                 enemyShips.length === 0
             ) {
                 score += 100 + level * 25;
-
-                if (level >= LEVELS.length - 1) {
-                    victory = true;
-
-                    if (score > highScore) {
-                        highScore = score;
-                        localStorage.setItem("asteroidDodgerHighScore", highScore);
-                    }
-                } else {
-                    level++;
-                    startLevel();
-                }
+                openUpgradeMenu();
             }
         }
 
@@ -936,6 +1069,40 @@
             ctx.globalAlpha = 1;
         }
 
+
+        function drawPlayerEffects() {
+            if (shieldHits > 0) {
+                ctx.save();
+                ctx.strokeStyle = "#77c8ff";
+                ctx.globalAlpha = 0.55 + 0.15 * Math.sin(elapsed * 5);
+                ctx.lineWidth = 2;
+                ctx.beginPath();
+                ctx.arc(player.x, player.y, 26, 0, Math.PI * 2);
+                ctx.stroke();
+                ctx.restore();
+            }
+
+            if (spinningLaserTimer > 0) {
+                ctx.save();
+                ctx.translate(player.x, player.y);
+                ctx.rotate(elapsed * 9);
+                ctx.strokeStyle = "#cdbfff";
+                ctx.shadowColor = "#cdbfff";
+                ctx.shadowBlur = 12;
+                ctx.lineWidth = 4;
+
+                for (let i = 0; i < 4; i++) {
+                    const angle = i * Math.PI / 2;
+                    ctx.beginPath();
+                    ctx.moveTo(Math.cos(angle) * 25, Math.sin(angle) * 25);
+                    ctx.lineTo(Math.cos(angle) * 135, Math.sin(angle) * 135);
+                    ctx.stroke();
+                }
+
+                ctx.restore();
+            }
+        }
+
         function drawEnemyShips() {
             for (const enemy of enemyShips) {
                 ctx.save();
@@ -1021,14 +1188,15 @@
             ctx.fillText(`Score: ${score}`, 18, 30);
             ctx.fillText(`High: ${highScore}`, 18, 58);
             ctx.fillText(`Level: ${level + 1}/${LEVELS.length}`, 18, 86);
+            ctx.fillText(`Upgrade pts: ${upgradePoints}`, 18, 114);
 
             ctx.textAlign = "right";
-            ctx.fillText(`Lives: ${"♥".repeat(lives)}`, WIDTH - 18, 30);
+            ctx.fillText(`Lives: ${"♥".repeat(Math.min(lives, 8))}${lives > 8 ? ` ×${lives}` : ""}`, WIDTH - 18, 30);
             ctx.fillText(`Asteroids: ${asteroids.length}`, WIDTH - 18, 58);
 
-            if (enemyShips.length > 0) {
-                ctx.fillText(`Hostiles: ${enemyShips.length}`, WIDTH - 18, 86);
-            }
+            if (enemyShips.length > 0) ctx.fillText(`Hostiles: ${enemyShips.length}`, WIDTH - 18, 86);
+            if (shieldHits > 0) ctx.fillText(`Shield: ${shieldHits}`, WIDTH - 18, 114);
+            if (spinningLaserCharges > 0) ctx.fillText(`Spin laser: ${spinningLaserCharges}`, WIDTH - 18, 142);
         }
 
         function drawStartHint() {
@@ -1088,6 +1256,57 @@
             );
         }
 
+
+        function drawUpgradeMenu() {
+            if (!upgradeMenu) return;
+
+            ctx.fillStyle = "rgba(5, 5, 9, 0.90)";
+            ctx.fillRect(0, 0, WIDTH, HEIGHT);
+
+            ctx.textAlign = "center";
+            ctx.fillStyle = "#ffffff";
+            ctx.font = "38px Georgia, serif";
+            ctx.fillText(`Level ${level + 1} cleared`, WIDTH / 2, 105);
+
+            ctx.font = "20px Georgia, serif";
+            ctx.fillText(
+                `Clear time: ${levelElapsed.toFixed(1)} s   ·   Upgrade points: ${upgradePoints}`,
+                WIDTH / 2,
+                145
+            );
+
+            ctx.font = "18px Georgia, serif";
+            ctx.fillStyle = "#d7c9ff";
+            ctx.fillText("Buy upgrades, then press Enter.", WIDTH / 2, 185);
+
+            const options = [
+                ["1 — Shield", "Absorbs 1 hit", UPGRADE_COSTS.shield],
+                ["2 — Shield+", "Absorbs 2 hits", UPGRADE_COSTS.shieldPlus],
+                ["3 — Spinning Laser", "2 seconds of radial fire · E to activate", UPGRADE_COSTS.spinningLaser]
+            ];
+
+            ctx.textAlign = "left";
+
+            options.forEach((option, i) => {
+                const y = 250 + i * 85;
+                ctx.fillStyle = upgradePoints >= option[2] ? "#ffffff" : "#77777d";
+                ctx.font = "23px Georgia, serif";
+                ctx.fillText(`${option[0]} — ${option[2]} pts`, 150, y);
+                ctx.font = "17px Georgia, serif";
+                ctx.fillText(option[1], 150, y + 28);
+            });
+
+            ctx.fillStyle = "#ffffff";
+            ctx.textAlign = "center";
+            ctx.font = "18px Georgia, serif";
+            ctx.fillText(
+                `Lives: ${lives}   ·   Shield hits: ${shieldHits}   ·   Spin charges: ${spinningLaserCharges}`,
+                WIDTH / 2,
+                HEIGHT - 75
+            );
+            ctx.fillText("Enter — Continue", WIDTH / 2, HEIGHT - 40);
+        }
+
         function drawVictory() {
             if (!victory) return;
 
@@ -1137,8 +1356,10 @@
             drawBullets();
             drawParticles();
             drawPlayer();
+            drawPlayerEffects();
             drawHud();
             drawStartHint();
+            drawUpgradeMenu();
             drawGameOver();
             drawVictory();
 
@@ -1176,13 +1397,18 @@
 
             keys[key] = true;
 
-            if (event.code === "Space") {
-                shoot();
+            if (event.code === "Space") shoot();
+            if (key === "e") activateSpinningLaser();
+
+            if (upgradeMenu) {
+                if (key === "1") buyUpgrade("shield");
+                if (key === "2") buyUpgrade("shieldPlus");
+                if (key === "3") buyUpgrade("spinningLaser");
+                if (key === "Enter") continueToNextLevel();
+                return;
             }
 
-            if (key === "Enter" && (gameOver || victory)) {
-                resetGame();
-            }
+            if (key === "Enter" && (gameOver || victory)) resetGame();
         });
 
         document.addEventListener("keyup", event => {
@@ -1225,6 +1451,8 @@
 
             if (gameOver || victory) {
                 resetGame();
+            } else if (upgradeMenu) {
+                continueToNextLevel();
             } else {
                 shoot();
             }
