@@ -1,0 +1,1127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>How Unlikely? - Robbie Mosher</title>
+
+    <link rel="stylesheet" href="../style.css">
+
+    <!-- MathJax -->
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$']],
+                displayMath: [['$$', '$$']]
+            }
+        };
+    </script>
+
+    <script
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+        async>
+    </script>
+
+    <style>
+        article {
+            max-width: 780px;
+            margin: 4rem auto;
+            padding: 0 1.5rem;
+        }
+
+        article header {
+            text-align: center;
+            margin-bottom: 3.5rem;
+        }
+
+        article h1 {
+            font-size: 2.6rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .subtitle {
+            font-size: 1.15rem;
+            font-style: italic;
+            opacity: 0.75;
+            margin-top: 0;
+        }
+
+        .article-body {
+            font-size: 1.15rem;
+            line-height: 1.75;
+        }
+
+        .article-body p {
+            margin: 0 0 1.5rem 0;
+        }
+
+        .article-body p + p {
+            text-indent: 1.5em;
+        }
+
+        .article-body h2 {
+            margin-top: 3rem;
+            margin-bottom: 1rem;
+            font-size: 1.7rem;
+        }
+
+        .article-body h3 {
+            margin-top: 2.25rem;
+            margin-bottom: 1rem;
+            font-size: 1.35rem;
+        }
+
+        .article-body em {
+            font-style: italic;
+        }
+
+        .article-body hr {
+            border: none;
+            border-top: 1px solid currentColor;
+            opacity: 0.25;
+            margin: 3rem 0;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-bottom: 2rem;
+        }
+
+        .equation {
+            overflow-x: auto;
+            margin: 1.75rem 0;
+            text-align: center;
+        }
+
+        .references {
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .references li {
+            margin-bottom: 1rem;
+        }
+
+        .citation {
+            white-space: nowrap;
+        }
+
+        .thesis {
+            margin: 2rem 0;
+            padding-left: 1.25rem;
+            border-left: 3px solid currentColor;
+            font-style: italic;
+        }
+    </style>
+</head>
+
+<body>
+
+<main>
+<article>
+
+<a class="back-link" href="../writing.html">&larr; Writing</a>
+
+<header>
+    <h1>How Unlikely?</h1>
+
+    <p class="subtitle">
+        On contingency, determinism, and the lives we might have lived
+    </p>
+</header>
+
+<div class="article-body">
+
+
+<h2>Introduction: Could It Have Been Otherwise?</h2>
+
+<p>
+    Can you recall all of the moments in your life which, looking back from
+    the present, you can say changed who you are? The moments after which your
+    life was never quite the same. Have you ever wondered what your life might
+    have looked like had you said no to one opportunity and yes to another;
+    had you quit instead of enduring a job that drained you; had you gone
+    somewhere else, met someone else, or simply made a different decision on
+    an otherwise unremarkable afternoon?
+</p>
+
+<p>
+    As I write this, I am in my final two weeks in Halifax. Soon I will leave
+    the city in which I have spent most of my life and move to Montreal to
+    begin graduate school. Perhaps unsurprisingly, the approaching end of one
+    part of my life has led me to think about the moments that brought me here.
+</p>
+
+<p>
+    Some are obvious only in retrospect. Others are stranger. There are moments
+    when you seem to be fully aware that something in you has changed, almost
+    as though the transition occurs instantaneously. You recognize that
+    whatever happens next, you cannot quite return to the person you were
+    before. I have come to think of these as moments of <em>alea iacta est</em>:
+    <strong>the die is cast</strong>. There is something unnerving about
+    experiencing one consciously. It is almost like watching some part of who
+    you were disappear while another emerges in its place.
+</p>
+
+<p>
+    But the metaphor already assumes more than it appears to. A die is cast
+    only if there are several possible outcomes before the throw and one actual
+    outcome afterward. To say that my life <em>could have gone differently</em>
+    therefore seems to say something not merely about my ignorance, but about
+    reality: that more than one continuation of the world was somehow possible.
+</p>
+
+<p>
+    Was it?
+</p>
+
+<p>
+    There are at least two very different things we might mean by
+    <em>possible</em>. One is epistemic. Before making a decision, I may not
+    know what I will choose. Several outcomes are possible <em>for me</em>
+    because I do not possess enough information to predict which will occur.
+    The other is physical, or modal. More than one future may be compatible
+    with the complete physical state of the world and the laws governing it.
+</p>
+
+<p>
+    Those two ideas are easily confused. A shuffled deck of cards is uncertain
+    to me even if, in principle, its next card is already fixed by its exact
+    physical state. A radioactive decay, depending on what one thinks quantum
+    theory tells us about the world, may represent a much stronger sort of
+    uncertainty. The first concerns what an observer knows. The second concerns
+    what reality permits.
+</p>
+
+<p class="thesis">
+    The question of how improbable a life is therefore cannot be separated
+    from a deeper question in the philosophy of physics: what is a physically
+    possible history, and what does it mean to assign a probability to one?
+</p>
+
+<p>
+    That is the question I want to follow. It will take us through determinism,
+    counterfactuals, relativity, the ontology of time, the quantum measurement
+    problem, Bohmian mechanics, collapse theories, and Everett's relative-state
+    formulation. The purpose is not to discover which interpretation of physics
+    makes human choice most comforting. It is to discover how differently the
+    innocent sentence <em>I could have done otherwise</em> behaves in different
+    physical pictures of the world.
+</p>
+
+
+<h2>Determinism and Counterfactual Lives</h2>
+
+<p>
+    Determinism is often described as the doctrine that the future can be
+    predicted from the past. That is close, but it puts too much emphasis on
+    prediction. A system can be deterministic even when prediction is
+    practically impossible. Chaotic systems provide familiar examples:
+    extremely small differences in initial conditions may produce enormous
+    differences later, making useful long-term prediction unattainable without
+    fantastically precise information.
+</p>
+
+<p>
+    The more important claim is ontological rather than epistemic. A theory is
+    deterministic, in the relevant sense, if a complete physical state together
+    with the laws admits only one continuation. If the state of the world at
+    some time is $S(t_0)$ and its deterministic dynamics are represented by
+    $U$, then
+</p>
+
+<div class="equation">
+    $$S(t)=U(t,t_0)S(t_0).$$
+</div>
+
+<p>
+    Once $S(t_0)$ is fixed, the later state is fixed as well.
+</p>
+
+<p>
+    Suppose we apply this picture to a human life. Two people, Alice and Bob,
+    eventually conceive a child, Charlie. Charlie develops, learns language,
+    makes friends, acquires preferences, falls in love, accepts some
+    opportunities and refuses others. Under a strict deterministic description,
+    none of these events sits outside the physical history of the world.
+    Charlie's deliberation is itself a physical process: sensory information
+    arrives, memories are recalled, neurons change state, muscles move, and a
+    sentence is eventually spoken.
+</p>
+
+<p>
+    Imagine that Charlie receives an offer requiring them to leave their
+    hometown. They spend a week deciding and finally say yes. Ten years later,
+    Charlie says:
+</p>
+
+<p>
+    <em>I could have said no.</em>
+</p>
+
+<p>
+    What can this sentence mean in a deterministic world?
+</p>
+
+<p>
+    It cannot mean that the entire physical state of the world might have been
+    exactly the same and yet Charlie might nevertheless have produced the other
+    answer. If the complete state is held fixed, determinism permits only one
+    continuation. The counterfactual must therefore be conditional upon some
+    difference. Had Charlie possessed different memories, received the offer in
+    different language, slept poorly the night before, met another person a
+    decade earlier, or inherited a slightly different nervous system, then a
+    different answer might have followed.
+</p>
+
+<p>
+    This is not enough to make counterfactuals meaningless. Counterfactual
+    reasoning is indispensable in both science and ordinary life. But it changes
+    the metaphysical content of the statement. Under strict determinism,
+    <em>I could have done otherwise</em> cannot straightforwardly mean
+    <em>this very world, in this very state, had more than one physically
+    available future</em>. It means something more like:
+    <em>in suitably different circumstances, a different history would have
+    followed</em>.
+</p>
+
+<p>
+    The distinction matters for probability too. Suppose the exact state of a
+    deterministic universe at $t_0$ is known. If that state evolves into some
+    later state $S_1$, then conditional on the state and the laws,
+</p>
+
+<div class="equation">
+    $$P(S_1\mid S(t_0),U)=1.$$
+</div>
+
+<p>
+    Calling Charlie's eventual life "astronomically improbable" therefore
+    requires us to introduce something else: an ensemble of possible initial
+    conditions, an incomplete description of the world, a probability
+    distribution over states, or some other measure of alternatives. Without
+    such a measure, improbability is not simply sitting inside the trajectory
+    waiting to be read off.
+</p>
+
+<p>
+    This is the first philosophical complication. Probability is always
+    probability <em>relative to something</em>. To say that a particular life
+    was one in a trillion, one in $10^{100}$, or one in any other enormous
+    number is meaningless unless we first say what counts as an alternative,
+    which alternatives receive what weight, and why that probability measure is
+    physically justified.
+</p>
+
+<p>
+    From inside Charlie's life, however, none of this removes the feeling of an
+    open future. Charlie deliberates precisely because Charlie does not know the
+    outcome of the deliberation. There is thus a striking gap between the
+    phenomenology of decision and the ontology of a deterministic theory. The
+    future appears open to the person even when, according to the theory, the
+    world has only one dynamically permitted continuation.
+</p>
+
+<p>
+    In that picture the road never literally forked. There was one trajectory
+    through state space, accompanied by an organism complicated enough to
+    represent neighbouring trajectories and ask what would have happened along
+    them.
+</p>
+
+
+<h2>Relativity and the Ontology of Time</h2>
+
+<p>
+    Classical determinism raises a question about the number of physically
+    possible futures. Relativity raises a different question: what sort of
+    thing is a future?
+</p>
+
+<p>
+    Our everyday picture of time contains a privileged present. The past is
+    settled, the future is not yet real, and reality advances from one moment
+    to the next. This picture is so natural that it is easy to mistake it for
+    part of physics itself.
+</p>
+
+<p>
+    Special relativity makes that difficult.
+</p>
+
+<p>
+    Einstein's 1905 theory requires the laws of physics to take the same form
+    in inertial frames and the speed of light in vacuum to be invariant for
+    inertial observers.<span class="citation">[1]</span> One consequence is the
+    relativity of simultaneity. Two spatially separated events judged
+    simultaneous in one inertial frame need not be simultaneous in another.
+</p>
+
+<p>
+    If two events have spacetime separation
+</p>
+
+<div class="equation">
+    $$\Delta s^2=-c^2\Delta t^2+\Delta x^2+\Delta y^2+\Delta z^2,$$
+</div>
+
+<p>
+    different inertial observers may disagree about the individual spatial and
+    temporal separations while agreeing about the invariant interval. For
+    spacelike-separated events there is, in general, no frame-independent fact
+    that they occur at the same time.
+</p>
+
+<p>
+    That simple result puts pressure on a metaphysical view called
+    <em>presentism</em>: roughly, the view that only what exists now is real.
+    If reality consists exclusively of "the present", but different inertial
+    observers slice spacetime into different sets of simultaneous events, what
+    physical structure identifies the uniquely real slice?
+</p>
+
+<p>
+    One response is <em>eternalism</em>, often associated with the block-universe
+    picture. On this view, past, present, and future events are all parts of a
+    four-dimensional spacetime. Charlie is not merely a three-dimensional
+    object continuously replaced by later Charlies; Charlie's life is
+    represented by a worldline extending through spacetime.
+</p>
+
+<p>
+    Arguments from relativity to such a view have a long history. Rietdijk and
+    Putnam famously argued in the 1960s that the relativity of simultaneity has
+    strong consequences for the reality of distant events and for our ordinary
+    distinction between past, present, and future.<span class="citation">[2,3]</span>
+</p>
+
+<p>
+    But this is precisely where physics ends and philosophy begins. Special
+    relativity does <strong>not</strong> contain an equation reading "the future
+    already exists." It supplies a spacetime structure without a Newtonian
+    absolute simultaneity relation. What ontology we build around that structure
+    requires further argument.
+</p>
+
+<p>
+    That distinction is important. It would be too quick to say that relativity
+    has experimentally proven eternalism, just as it would be too quick to say
+    that our experience of temporal passage proves presentism. Physics
+    constrains the available metaphysics; it does not always select one by
+    itself.
+</p>
+
+<p>
+    Nevertheless, the block-universe picture transforms the meaning of
+    <em>alea iacta est</em>. Charlie experiences the decision as a transition:
+    before saying yes, the answer is anticipated; afterward, it is remembered.
+    Yet if Charlie's complete history is represented as a worldline in a
+    four-dimensional spacetime, the event itself need not mark any objective
+    change in what exists. What changes along the worldline is Charlie's
+    physical state and therefore Charlie's information.
+</p>
+
+<p>
+    An earlier Charlie does not contain a memory of the decision. A later
+    Charlie does. The asymmetry is real and physical, but it need not correspond
+    to a metaphysical spotlight sweeping across spacetime and turning future
+    events into present ones.
+</p>
+
+<p>
+    This reveals a second ambiguity in the phrase <em>the die is cast</em>.
+    Ordinarily the phrase suggests an ontological transition: several
+    possibilities exist, then one becomes actual. In an eternalist spacetime,
+    however, it is not obvious that actuality itself changes at the moment of
+    decision. Perhaps the event does not come into existence at all. Perhaps
+    Charlie simply reaches it.
+</p>
+
+<p>
+    Relativity therefore complicates the story without telling us whether the
+    world branches. For that question, twentieth-century physics gives us a
+    theory whose mathematical success is extraordinary and whose ontology is
+    famously difficult to agree upon.
+</p>
+
+
+<h2>Quantum Theory and the Measurement Problem</h2>
+
+<p>
+    Quantum mechanics represents the physical state of a system by a vector in
+    Hilbert space, often written as a wavefunction $|\psi\rangle$. When the
+    system is isolated, its state evolves according to the Schrödinger equation,
+</p>
+
+<div class="equation">
+    $$i\hbar\frac{\partial}{\partial t}|\psi(t)\rangle
+    =\hat{H}|\psi(t)\rangle.$$
+</div>
+
+<p>
+    This evolution is linear and deterministic. Given the state at one time and
+    the Hamiltonian, the formalism fixes the state at later times.
+</p>
+
+<p>
+    Yet textbook quantum mechanics also associates measurements with
+    probabilities. If a state can be expanded in eigenstates of an observable,
+</p>
+
+<div class="equation">
+    $$|\psi\rangle=\sum_i c_i|a_i\rangle,$$
+</div>
+
+<p>
+    then the Born rule assigns outcome $a_i$ the probability
+</p>
+
+<div class="equation">
+    $$P(a_i)=|c_i|^2.$$
+</div>
+
+<p>
+    The conceptual difficulty is immediate. The ordinary Schrödinger dynamics
+    evolves superpositions into superpositions. Yet measurements appear to
+    produce definite records. We prepare a state containing several amplitudes
+    and later find an apparatus indicating one result.
+</p>
+
+<p>
+    That tension is the measurement problem. And it matters enormously for our
+    question because different solutions give radically different meanings to
+    the word <em>possible</em>.
+</p>
+
+<p>
+    It is tempting to tell a simple historical story: classical physics was
+    deterministic, quantum mechanics discovered that nature is fundamentally
+    random, and therefore the future is objectively open. But the actual
+    situation is more interesting.
+</p>
+
+<p>
+    Bell's theorem shows that the statistical predictions of quantum theory
+    cannot be reproduced by a broad class of theories in which outcomes are
+    fixed by <em>local</em> hidden variables satisfying Bell's assumptions.
+    Experiments violating Bell inequalities therefore rule out that class of
+    local explanations.<span class="citation">[4]</span>
+</p>
+
+<p>
+    What Bell's theorem does <em>not</em> prove is that every deterministic
+    ontology is impossible. Determinism can survive if some other assumption is
+    abandoned. David Bohm had already provided a concrete example in 1952.
+    Bohmian mechanics supplements the wavefunction with an actual configuration
+    of particles guided by the wavefunction. The dynamics are deterministic,
+    but the theory is explicitly nonlocal.<span class="citation">[5]</span>
+</p>
+
+<p>
+    This point is philosophically essential. Quantum experiments do not simply
+    force us to replace one deterministic universe with one fundamentally
+    stochastic universe. They constrain the combinations of locality,
+    completeness, dynamics, and ontology that a viable theory can possess.
+</p>
+
+<p>
+    Consequently, asking whether Charlie <em>really could have done otherwise</em>
+    cannot be answered merely by invoking the word "quantum". We have to say
+    what quantum mechanics describes.
+</p>
+
+
+<h2>Three Kinds of Alternative</h2>
+
+<h3>1. Stochastic Collapse: One Future Becomes Actual</h3>
+
+<p>
+    One possibility is that the quantum state really does undergo stochastic
+    reduction. On such a picture, a system can possess several physically
+    possible outcomes before a collapse event and one actual outcome afterward.
+    The Born-rule probabilities then function as genuine chances rather than
+    merely measures of our ignorance.
+</p>
+
+<p>
+    Objective-collapse theories make this idea precise by modifying ordinary
+    unitary quantum dynamics. The Ghirardi-Rimini-Weber model, for example,
+    introduces spontaneous localization events so that microscopic systems can
+    display ordinary quantum behaviour while macroscopic superpositions are
+    dynamically suppressed.<span class="citation">[6]</span>
+</p>
+
+<p>
+    In such a theory the metaphor of a die is close to literal. The state before
+    the stochastic event does not uniquely determine which outcome becomes
+    actual. If outcome $a$ has chance $p$ and outcome $b$ has chance $1-p$, the
+    laws themselves leave open which one occurs.
+</p>
+
+<p>
+    Suppose, only for the sake of argument, that some such microscopic
+    difference becomes causally amplified until Charlie's later history differs.
+    The philosophical point does not require us to claim that ordinary human
+    decisions are controlled by isolated quantum coin tosses. It requires only
+    that the fundamental dynamics permit more than one later history from the
+    same prior physical state.
+</p>
+
+<p>
+    Then Charlie's counterfactual acquires a strong modal meaning. There was a
+    physically possible history in which Charlie said no, but that history did
+    not become actual.
+</p>
+
+<p>
+    In this ontology:
+</p>
+
+<div class="equation">
+    $$\text{many possible futures}\longrightarrow\text{one actual future}.$$
+</div>
+
+<p>
+    Here <em>alea iacta est</em> describes an objective transition. Before the
+    event, several outcomes have nonzero chance. Afterward, one of them is the
+    history of the world.
+</p>
+
+
+<h3>2. Bohmian Mechanics: One Actual Trajectory, Deterministically</h3>
+
+<p>
+    Bohmian mechanics offers a profoundly different answer. The wavefunction
+    evolves according to Schrödinger's equation while the actual configuration
+    of particles evolves according to a guiding law.<span class="citation">[5]</span>
+    Given the complete Bohmian state, the later configuration is fixed.
+</p>
+
+<p>
+    Probabilities still appear, but they need not represent a fundamental
+    indeterminacy in the dynamics. They can instead characterize our ignorance
+    of the exact configuration, typically through the quantum-equilibrium
+    distribution associated with $|\psi|^2$.
+</p>
+
+<p>
+    For Charlie, this resembles classical determinism more than the collapse
+    picture does. If the complete physical state is fixed, there is one actual
+    continuation. The fact that the wavefunction contains several components
+    does not imply that every component corresponds to an actual future Charlie,
+    nor that one is selected by an irreducibly random collapse.
+</p>
+
+<p>
+    The price is nonlocality. Bell's theorem ensures that a hidden-variable
+    completion reproducing the relevant quantum predictions cannot simply retain
+    the local causal picture one might have hoped for.<span class="citation">[4,5]</span>
+</p>
+
+<p>
+    But for our purposes the lesson is simple: <strong>quantum theory is
+    compatible with a deterministic ontology</strong>. The statement
+    <em>quantum mechanics says the future is fundamentally random</em> therefore
+    smuggles an interpretation into what sounds like a neutral report of the
+    formalism.
+</p>
+
+
+<h3>3. Everett: All Decohered Outcomes Persist</h3>
+
+<p>
+    Hugh Everett's relative-state formulation takes an almost opposite route.
+    Rather than adding hidden variables or a stochastic collapse law, it takes
+    the universal quantum state and its ordinary unitary evolution seriously at
+    all times.<span class="citation">[7]</span>
+</p>
+
+<p>
+    Consider a simplified measurement interaction:
+</p>
+
+<div class="equation">
+    $$
+    (\alpha|0\rangle+\beta|1\rangle)|O_{\mathrm{ready}}\rangle
+    \longrightarrow
+    \alpha|0\rangle|O_0\rangle
+    +
+    \beta|1\rangle|O_1\rangle.
+    $$
+</div>
+
+<p>
+    The Schrödinger equation does not choose one term and delete the other.
+    It produces an entangled state in which the observer's record is correlated
+    with the measured system.
+</p>
+
+<p>
+    Environmental decoherence then becomes crucial. Interactions with the
+    surrounding environment rapidly suppress observable interference between
+    macroscopically distinct components and select stable, approximately
+    classical records.<span class="citation">[8]</span> Decoherence does not,
+    by itself, add a literal collapse to the wavefunction. Rather, it explains
+    why the components behave to an excellent approximation like dynamically
+    autonomous alternatives.
+</p>
+
+<p>
+    In an Everettian ontology, therefore, the other component does not vanish.
+    If the relevant branching structure eventually contains a Charlie who says
+    yes and a Charlie who says no, both are descendants of the same earlier
+    Charlie.
+</p>
+
+<p>
+    The road forked, but not by randomly choosing one road.
+</p>
+
+<p>
+    The universal quantum state evolved deterministically into a structure
+    containing both.
+</p>
+
+<div class="equation">
+    $$\text{one quantum state}\longrightarrow\text{multiple decohered successors}.$$
+</div>
+
+<p>
+    This produces one of the most fascinating inversions in the philosophy of
+    quantum mechanics. Everett is popularly described as the interpretation in
+    which "everything happens", which sounds maximally indeterministic. Yet the
+    underlying universal dynamics are deterministic. The multiplicity lies in
+    the ontology of the evolved state, not in a stochastic choice made by the
+    equations.
+</p>
+
+<p>
+    Charlie before the event can still be uncertain in an important sense.
+    There will be future observers with different records, and the earlier
+    Charlie may not know which future record will characterize the successor
+    with whom they will later identify. But this is not the same uncertainty as
+    wondering which single future the universe will select.
+</p>
+
+<p>
+    Probability consequently becomes philosophically difficult. If all
+    decohered outcomes with nonzero amplitude occur, why should a rational agent
+    assign credences according to the Born weights $|c_i|^2$? Everettian
+    approaches have attempted to understand those weights through typicality,
+    self-locating uncertainty, decision theory, and related ideas; the problem
+    has generated a substantial literature rather than disappearing once
+    collapse is removed.<span class="citation">[9]</span>
+</p>
+
+
+<h2>Probability Is Not One Thing</h2>
+
+<p>
+    We can now see why the original question—<em>how unlikely is this
+    life?</em>—is unstable.
+</p>
+
+<p>
+    In a deterministic classical theory, probabilities often describe an
+    ensemble of possible states or our ignorance of the exact state. The
+    underlying trajectory itself need not be probabilistic.
+</p>
+
+<p>
+    In Bohmian mechanics, the complete dynamics can again be deterministic,
+    even though observers use the Born distribution to make statistical
+    predictions.
+</p>
+
+<p>
+    In a genuine collapse theory, probabilities can instead represent objective
+    chances: the laws themselves do not fix which outcome occurs.
+</p>
+
+<p>
+    In Everettian quantum mechanics, the universal evolution is deterministic
+    and all relevant decohered outcomes persist, yet branch weights still play
+    the empirical role associated with quantum probability.
+</p>
+
+<p>
+    These are not merely different numerical answers to the same probability
+    question. They are different accounts of what probability <em>is</em>.
+</p>
+
+<p>
+    This is why the common exercise of multiplying together a long list of
+    probabilities to estimate "the odds that you exist" should make us
+    suspicious. Which probability space are we using? Are we varying initial
+    conditions? Genetic combinations? Human decisions? Quantum outcomes? Entire
+    cosmic histories? Are those possibilities mutually exclusive outcomes in
+    one stochastic theory, branches of one universal state, or merely
+    counterfactual histories we have chosen to imagine?
+</p>
+
+<p>
+    A probability measure requires a sample space and a rule assigning weights.
+    In schematic form,
+</p>
+
+<div class="equation">
+    $$P:\Omega\rightarrow[0,1],$$
+</div>
+
+<p>
+    where $\Omega$ is the space of possibilities. But physics does not hand us
+    a unique, interpretation-independent $\Omega$ labelled "all lives I might
+    have lived." We have to decide what physical histories belong in that set,
+    what makes two histories distinct, and what measure is appropriate.
+</p>
+
+<p>
+    There is an even deeper problem. A life is not merely an outcome like
+    rolling a six. It is an extended physical history. If I alter one event
+    twenty years ago, how much can change before the resulting person no longer
+    counts as <em>me</em> living a different life and instead counts as a
+    different person altogether? Physics alone may not settle that identity
+    criterion.
+</p>
+
+<p>
+    The question therefore straddles physics, metaphysics, and the philosophy
+    of probability. We want a number, but before we can have a number we need
+    an ontology.
+</p>
+
+
+<h2>Does Physics Leave Room for Free Will?</h2>
+
+<p>
+    At this point it is tempting to make the discussion about free will. But
+    that question should be separated from the one we have actually answered.
+</p>
+
+<p>
+    Indeterminism is not freedom.
+</p>
+
+<p>
+    If Charlie says yes because the preceding state of the universe fixed the
+    decision, someone may worry that Charlie could not have done otherwise. But
+    if Charlie says yes because an irreducibly stochastic event happened to
+    resolve one way rather than another, it is not obvious that Charlie has
+    acquired the kind of authorship the defender of free will wanted.
+</p>
+
+<p>
+    Replacing
+</p>
+
+<div class="equation">
+    $$\text{determined by prior physical state}$$
+</div>
+
+<p>
+    with
+</p>
+
+<div class="equation">
+    $$\text{partly influenced by fundamental chance}$$
+</div>
+
+<p>
+    does not by itself make the result more <em>mine</em>.
+</p>
+
+<p>
+    Conversely, some philosophical accounts of free will are compatibilist:
+    they hold that meaningful agency does not require the ability of the exact
+    same total physical state to generate more than one future. On such views,
+    what matters may be that Charlie's action flows from Charlie's reasons,
+    values, deliberative capacities, and character rather than from coercion or
+    compulsion.
+</p>
+
+<p>
+    I will not try to settle that debate here. The important lesson is narrower.
+    Physics constrains what kinds of alternatives a theory permits. It does not
+    automatically tell us which conception of moral responsibility or agency
+    should be built upon them.
+</p>
+
+<p>
+    Quantum indeterminacy is therefore not a trapdoor through which traditional
+    free will quietly escapes determinism. It is a clue that the structure of
+    physical possibility may be more complicated than the classical picture,
+    and that is philosophically interesting enough.
+</p>
+
+
+<h2>Returning to the Present</h2>
+
+<p>
+    We have travelled rather far from Charlie's decision.
+</p>
+
+<p>
+    We began with a familiar sentence:
+</p>
+
+<p>
+    <em>I could have done otherwise.</em>
+</p>
+
+<p>
+    In a deterministic classical ontology, that statement cannot straightforwardly
+    mean that the exact same complete state of the world possessed several
+    dynamically allowed continuations. The neighbouring life is a
+    counterfactual associated with some difference in conditions.
+</p>
+
+<p>
+    Relativity then complicated the temporal picture. The absence of an
+    observer-independent global simultaneity relation makes the ordinary notion
+    of a single cosmic present difficult to treat as a straightforward piece of
+    physical structure. Eternalism is one response, but it is a philosophical
+    interpretation of relativistic spacetime rather than an experimentally
+    printed label on the equations.
+</p>
+
+<p>
+    Quantum mechanics complicated the modal picture further without supplying
+    a unique ontology. Bell's theorem sharply restricts local hidden-variable
+    explanations, but deterministic theories remain possible if they take a
+    nonlocal form. Objective-collapse theories make physical chance fundamental.
+    Everettian quantum mechanics keeps the universal evolution deterministic
+    while allowing multiple decohered successors to persist.
+</p>
+
+<p>
+    So what were the odds that Charlie would arrive precisely here?
+</p>
+
+<p>
+    There is no interpretation-independent number waiting for us.
+</p>
+
+<p>
+    Given a complete deterministic state, the relevant conditional probability
+    of its actual continuation may be one. Given an ensemble of incompletely
+    specified initial conditions, the same later history may occupy an
+    extraordinarily small region of possibility space. In a stochastic collapse
+    theory, particular transitions may possess objective chances. In Everett,
+    asking why one allowed outcome occurred <em>instead of</em> another may
+    begin with the wrong ontology, because both may belong to the evolved
+    quantum state.
+</p>
+
+<p>
+    Before asking how improbable a life is, then, we need answers to several
+    prior questions:
+</p>
+
+<p>
+    What counts as a physically possible history? What makes two histories
+    distinct? Which histories are actual? What kind of probability is being
+    used? And what measure assigns weights to the alternatives?
+</p>
+
+<p>
+    Until those questions are specified, "the odds of becoming exactly this
+    person" are not merely difficult to calculate. They are not yet a
+    well-defined physical quantity.
+</p>
+
+<p>
+    Strangely, I find this more satisfying than an enormous number.
+</p>
+
+<p>
+    The present does not need to be statistically miraculous to be strange.
+    Its strangeness comes from its specificity.
+</p>
+
+<p>
+    Whatever the ultimate ontology of the universe turns out to be, there is an
+    undeniable asymmetry in how I experience my own life. I can remember
+    Halifax; I cannot remember Montreal. I possess records of decisions I made
+    and only imagined versions of decisions I did not make. I can trace some
+    fraction of the causal structure that produced the person writing these
+    words, while most of it is permanently inaccessible to me.
+</p>
+
+<p>
+    Looking backward, I can identify moments that appear to divide my life into
+    a before and an after. Some were decisions. Some were accidents. Some seemed
+    insignificant when they occurred and acquired their importance only years
+    later. And occasionally there are those stranger moments in which the
+    transition is visible while it is happening—when you somehow recognize that
+    the person entering the moment will not quite be the person who leaves it.
+</p>
+
+<p>
+    Those are the moments I have called <em>alea iacta est</em>.
+</p>
+
+<p>
+    But perhaps the metaphor has been misleading from the beginning. A human
+    life is not one die cast once. It is an extended causal structure in which
+    the consequences of one event become part of the conditions of the next.
+    The outcome of one throw changes the table on which the next is made.
+</p>
+
+<p>
+    There are surely moments which changed my life that I cannot remember.
+    There are probably moments I remember vividly which changed almost nothing.
+    There are people whose smallest decisions altered my trajectory without
+    either of us knowing it, and decisions made decades before I was born
+    without which the present arrangement of matter I call myself would never
+    have existed.
+</p>
+
+<p>
+    None of this tells me that my present life had some tiny, privileged
+    probability of occurring. Perhaps that question has no unique answer.
+    Perhaps under one ontology there was only one continuation, under another
+    there were several genuine chances, and under another the alternatives
+    belong to different decohered successors of a single quantum state.
+</p>
+
+<p>
+    What remains invariant across those pictures is much closer to experience:
+    from here, I have one record of a past and uncertainty about what I will
+    record next.
+</p>
+
+<p>
+    Of all the lives I can imagine having lived, I remember only this one. Of
+    all the places I might imagine myself being, I am here. Of all the people I
+    might imagine becoming, there is one person presently asking these
+    questions.
+</p>
+
+<p>
+    In two weeks, I will leave Halifax.
+</p>
+
+<p>
+    I do not know whether the best final theory of nature will describe that
+    event as part of a unique deterministic history, one stochastic outcome
+    among several, one decohered branch among many, or in terms that our current
+    concepts of history and possibility do not yet capture.
+</p>
+
+<p>
+    I only know what it looks like from here.
+</p>
+
+<p>
+    The die is in my hand.
+</p>
+
+
+<hr>
+
+
+<h2>References</h2>
+
+<ol class="references">
+
+    <li>
+        Einstein, A. (1905).
+        <em>Zur Elektrodynamik bewegter Körper</em>
+        [On the Electrodynamics of Moving Bodies].
+        <em>Annalen der Physik</em>, 17, 891–921.
+        <a href="https://www.fourmilab.ch/etexts/einstein/specrel/www/">
+            English translation
+        </a>.
+    </li>
+
+    <li>
+        Rietdijk, C. W. (1966).
+        "A Rigorous Proof of Determinism Derived from the Special Theory of Relativity."
+        <em>Philosophy of Science</em>, 33(4), 341–344.
+        <a href="https://doi.org/10.1086/288106">
+            DOI
+        </a>.
+    </li>
+
+    <li>
+        Putnam, H. (1967).
+        "Time and Physical Geometry."
+        <em>The Journal of Philosophy</em>, 64(8), 240–247.
+        <a href="https://www.jstor.org/stable/2024493">
+            JSTOR
+        </a>.
+    </li>
+
+    <li>
+        Bell, J. S. (1964).
+        "On the Einstein Podolsky Rosen Paradox."
+        <em>Physics Physique Fizika</em>, 1, 195–200.
+        <a href="https://cds.cern.ch/record/111654/files/vol1p195-200_001.pdf">
+            CERN PDF
+        </a>.
+    </li>
+
+    <li>
+        Bohm, D. (1952).
+        "A Suggested Interpretation of the Quantum Theory in Terms of
+        'Hidden' Variables. I and II."
+        <em>Physical Review</em>, 85, 166–193.
+        <a href="https://doi.org/10.1103/PhysRev.85.166">
+            Part I
+        </a>.
+    </li>
+
+    <li>
+        Ghirardi, G. C., Rimini, A., &amp; Weber, T. (1986).
+        "Unified Dynamics for Microscopic and Macroscopic Systems."
+        <em>Physical Review D</em>, 34, 470–491.
+        <a href="https://doi.org/10.1103/PhysRevD.34.470">
+            DOI
+        </a>.
+    </li>
+
+    <li>
+        Everett, H. III (1957).
+        "'Relative State' Formulation of Quantum Mechanics."
+        <em>Reviews of Modern Physics</em>, 29(3), 454–462.
+        <a href="https://doi.org/10.1103/RevModPhys.29.454">
+            DOI
+        </a>.
+    </li>
+
+    <li>
+        Zurek, W. H. (2003).
+        "Decoherence, Einselection, and the Quantum Origins of the Classical."
+        <em>Reviews of Modern Physics</em>, 75, 715–775.
+        <a href="https://doi.org/10.1103/RevModPhys.75.715">
+            DOI
+        </a>.
+    </li>
+
+    <li>
+        Wallace, D. (2012).
+        <em>The Emergent Multiverse: Quantum Theory according to the Everett Interpretation</em>.
+        Oxford University Press.
+        See also Wallace, D. (2009),
+        "A Formal Proof of the Born Rule from Decision-Theoretic Assumptions,"
+        <a href="https://arxiv.org/abs/0906.2718">
+            arXiv:0906.2718
+        </a>.
+    </li>
+
+</ol>
+
+
+</div>
+
+</article>
+</main>
+
+<footer>
+    <p>&copy; 2026 Robbie Mosher</p>
+</footer>
+
+</body>
+</html>

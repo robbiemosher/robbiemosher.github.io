@@ -1,4 +1,4 @@
-```html
+
 <h2>Introduction</h2>
 
 <p>
@@ -529,6 +529,317 @@
     To understand that possibility, we have to turn to the many-worlds
     interpretation.
 </p>
-```
-## Special and General Relativity
+
+<h2>Special and General Relativity</h2>
+
+<p>
+    Before abandoning the classical picture for quantum mechanics, there is
+    another revolution in twentieth-century physics which complicates our
+    picture of Charlie's life in a rather different way. Einstein's theories
+    of special and general relativity do not, by themselves, introduce
+    fundamental randomness. Instead, they force us to reconsider something
+    even more basic: what we mean by space, time, and the present.
+</p>
+
+<p>
+    In everyday life, we tend to imagine time as universal. Somewhere in the
+    background there appears to be a cosmic clock steadily advancing from past
+    to present to future. Two people may disagree about what time an event
+    occurred because their watches are poorly synchronized, but we intuitively
+    assume that there is nevertheless a correct answer. Given sufficiently
+    accurate clocks, everyone should be able to agree on what happened
+    <em>now</em>.
+</p>
+
+<p>
+    Special relativity tells us that this intuition is wrong.
+</p>
+
+<p>
+    Einstein's theory begins with two deceptively simple principles: the laws
+    of physics are the same in every inertial reference frame, and the speed of
+    light in vacuum has the same value, $c$, for every inertial observer.
+    Reconciling these statements requires space and time to behave very
+    differently from our ordinary expectations.
+</p>
+
+<p>
+    Consider two events separated in space and time. In one inertial frame
+    their separation can be written as
+</p>
+
+<div class="equation">
+    $$
+    \Delta s^2
+    =
+    -c^2\Delta t^2
+    +\Delta x^2
+    +\Delta y^2
+    +\Delta z^2.
+    $$
+</div>
+
+<p>
+    Different observers moving relative to one another may disagree about
+    $\Delta t$, $\Delta x$, $\Delta y$, and $\Delta z$ individually, but they
+    agree on the spacetime interval $\Delta s^2$. Space and time are therefore
+    not independent universal structures. They are aspects of a single
+    geometry: <em>spacetime</em>.
+</p>
+
+<p>
+    This has several famous consequences. Moving clocks run slowly relative to
+    one another, lengths depend upon the observer's state of motion, and two
+    spatially separated events which occur simultaneously for one observer need
+    not occur simultaneously for another.
+</p>
+
+<p>
+    The last of these—the <em>relativity of simultaneity</em>—is particularly
+    important for our purposes.
+</p>
+
+<p>
+    Imagine Charlie standing on Earth and another observer travelling past at
+    a substantial fraction of the speed of light. Charlie can identify a set
+    of distant events which, according to Charlie's reference frame, are
+    happening at precisely the same time as Charlie reads this sentence. The
+    moving observer will generally identify a different set of distant events
+    as simultaneous with that same event in Charlie's life.
+</p>
+
+<p>
+    There is no experiment which reveals that one of these observers has
+    identified the <em>true</em> present. Neither has made a mistake. For
+    spatially separated events, simultaneity itself depends upon the observer's
+    frame of reference.
+</p>
+
+<p>
+    This presents a problem for our intuitive picture of a universal present.
+    If there were one objective cosmic moment separating everything that
+    <em>has happened</em> from everything that <em>has not happened yet</em>,
+    we might expect every observer to agree about which distant events belong
+    to it. Special relativity gives us no such privileged division.
+</p>
+
+<p>
+    Instead, Charlie's life can be represented as a path through spacetime
+    called a <em>worldline</em>. Charlie's birth is an event on that worldline.
+    So is their first day of school, their first love, every moment of
+    <em>alea iacta est</em>, and eventually their death. Charlie does not
+    merely occupy different places as time passes; their complete history can
+    be represented geometrically as a continuous trajectory through
+    four-dimensional spacetime.
+</p>
+
+<p>
+    Along this trajectory Charlie measures their own <em>proper time</em>,
+    $\tau$. For motion through flat spacetime,
+</p>
+
+<div class="equation">
+    $$
+    c^2d\tau^2
+    =
+    c^2dt^2
+    -dx^2
+    -dy^2
+    -dz^2.
+    $$
+</div>
+
+<p>
+    or, for an object moving with speed $v$ relative to some inertial frame,
+</p>
+
+<div class="equation">
+    $$
+    d\tau
+    =
+    dt\sqrt{1-\frac{v^2}{c^2}}.
+    $$
+</div>
+
+<p>
+    Charlie's wristwatch therefore measures something physically meaningful
+    along Charlie's own worldline, but there is no single universal time
+    coordinate shared by every possible observer.
+</p>
+
+<p>
+    This picture becomes stranger still when we introduce gravity.
+</p>
+
+
+<h3>General Relativity</h3>
+
+<p>
+    In 1915, Einstein extended these ideas through general relativity. Gravity
+    ceased to be treated simply as a force acting between objects and instead
+    became associated with the geometry of spacetime itself. Matter and energy
+    influence that geometry, while the geometry determines how matter moves.
+</p>
+
+<p>
+    The relationship is encoded in Einstein's field equations,
+</p>
+
+<div class="equation">
+    $$
+    G_{\mu\nu}
+    +\Lambda g_{\mu\nu}
+    =
+    \frac{8\pi G}{c^4}T_{\mu\nu}.
+    $$
+</div>
+
+<p>
+    The details of this equation are not important for our discussion. On one
+    side is information describing the geometry of spacetime; on the other is
+    information describing the matter and energy contained within it. John
+    Wheeler summarized the relationship rather beautifully: matter tells
+    spacetime how to curve, and curved spacetime tells matter how to move.
+</p>
+
+<p>
+    Time itself is consequently affected by gravity. Two clocks following
+    different paths through a gravitational field need not accumulate the same
+    amount of proper time. A clock deeper in a gravitational potential runs
+    differently from one farther away. This is not merely a theoretical
+    curiosity. Such differences must be accounted for in technologies such as
+    GPS, whose clocks experience relativistic effects because of both their
+    motion and their position in Earth's gravitational field.
+</p>
+
+<p>
+    Once again, there is no universal clock external to the universe telling
+    everything what time it really is. There are clocks following worldlines
+    through spacetime, each accumulating proper time according to the geometry
+    along its path.
+</p>
+
+
+<h3>The Block Universe</h3>
+
+<p>
+    There is a philosophical interpretation of relativity which becomes
+    particularly provocative when thinking about a human life. If spacetime is
+    fundamentally a four-dimensional structure without an observer-independent
+    global present, perhaps past, present and future should not be regarded as
+    fundamentally different categories of existence at all.
+</p>
+
+<p>
+    This view is often called <em>eternalism</em>, and the corresponding
+    picture is commonly described as the <em>block universe</em>.
+</p>
+
+<p>
+    In the block-universe picture, Charlie is not simply a three-dimensional
+    object which exists at the present and continually becomes a new version
+    of itself. Charlie is, in a sense, the entire four-dimensional worldline:
+    the infant, the child, the adult reading an important letter, the person
+    deciding whether to say yes, and every later Charlie connected along that
+    trajectory.
+</p>
+
+<p>
+    The Charlie who has not yet made the decision experiences the future as
+    unknown. The Charlie ten years later remembers the decision as part of the
+    past. But both are locations along the same worldline.
+</p>
+
+<p>
+    This does <em>not</em> mean that relativity has experimentally proven that
+    the future already exists in precisely the same sense as the past.
+    Relativity is a physical theory; eternalism is a metaphysical
+    interpretation motivated in part by the spacetime structure that
+    relativity describes. Other philosophical interpretations of time remain
+    possible.
+</p>
+
+<p>
+    Nevertheless, the block universe creates an interesting tension with our
+    moments of <em>alea iacta est</em>.
+</p>
+
+<p>
+    From Charlie's perspective, the critical moment feels like a fork:
+</p>
+
+<div class="equation">
+    $$
+    \text{Charlie before}
+    \longrightarrow
+    \begin{cases}
+        \text{Charlie who says yes},\\
+        \text{Charlie who says no}.
+    \end{cases}
+    $$
+</div>
+
+<p>
+    Charlie experiences deliberation because the answer is unknown to them.
+    Yet in a deterministic block universe there is no literal fork in
+    spacetime. There is simply Charlie's worldline, and the decision is one
+    event upon it. The Charlie before the decision does not know what comes
+    next; the Charlie afterward does. The difference is one of location and
+    information, not necessarily one of what physically exists.
+</p>
+
+<p>
+    This makes the phrase <em>the die is cast</em> strangely ambiguous. We
+    normally imagine a moment before the cast, when several outcomes remain
+    possible, followed by a moment afterward, when one possibility becomes
+    reality. But if Charlie's entire worldline belongs to a four-dimensional
+    spacetime, what exactly changed when the die landed?
+</p>
+
+<p>
+    Perhaps nothing changed about spacetime at all.
+</p>
+
+<p>
+    What changed was Charlie.
+</p>
+
+<p>
+    The event crossed from something Charlie anticipated to something Charlie
+    remembered. Information which was inaccessible to an earlier Charlie
+    became part of the physical state of a later Charlie. The psychological
+    sensation of crossing a critical juncture remains completely real even if
+    the underlying spacetime contains no objective surface sweeping forward
+    and converting future events into past ones.
+</p>
+
+<p>
+    There is something unsettling about this picture. The moments of our lives
+    which feel most radically transformative may not correspond to the
+    universe itself splitting into a before and an after. They may instead be
+    points along a continuous worldline at which the physical system we call a
+    person acquires new information, new memories, and a new relationship to
+    everything that precedes and follows them.
+</p>
+
+<p>
+    Yet relativity alone still leaves us surprisingly close to the
+    deterministic universe of the previous section. It changes our conception
+    of time, but it does not require Charlie's worldline to branch. Given
+    deterministic laws and appropriate boundary or initial data, there may
+    still be only one trajectory through spacetime.
+</p>
+
+<p>
+    To find genuine alternatives—or at least something which looks remarkably
+    like them—we have to descend into the microscopic world.
+</p>
+
+<p>
+    There, the problem becomes considerably stranger.
+</p>
+
+
+<h2>Returning to the Present</h2> <p> We have travelled rather far from Charlie's decision. </p> <p> What began as the familiar question of what might have happened had Charlie simply said no has led us through several radically different pictures of reality. In classical mechanics, there may never have been another physically possible answer at all. Charlie's uncertainty belonged to Charlie, while the trajectory itself was fixed by everything that came before. </p> <p> Relativity complicated the picture without necessarily providing an escape. Charlie's life became a worldline through spacetime, with no universal present dividing what exists from what does not. The moment of decision remained enormously important to Charlie, even though spacetime itself need not recognize any special boundary between the person before and the person after. </p> <p> Quantum mechanics then disturbed the comfortable certainty of a single classical trajectory. Depending upon how we interpret the theory, probabilities may represent something more fundamental than ignorance. The future might contain genuinely alternative outcomes—or, in the many-worlds interpretation, the alternatives may never disappear at all. Charlie says yes, while another branch contains a Charlie who says no. </p> <p> And even this is almost certainly not the end of the story. </p> <p> Quantum mechanics and general relativity are extraordinarily successful theories, yet we still do not possess a complete theory which reconciles the quantum description of matter with the dynamical geometry of spacetime. Somewhere beneath the descriptions used throughout this essay lies the unresolved problem of <em>quantum gravity</em>. Whether spacetime itself is fundamental, whether time survives unchanged in a deeper theory, and what a "history" ultimately means at the most fundamental level remain open questions. </p> <p> It would therefore be rather arrogant to expect physics to give us a neat answer to the question with which we began. </p> <p> <strong>How improbable is the person who emerges?</strong> </p> <p> Improbable relative to what? </p> <p> Given the complete initial state of a deterministic universe, perhaps the probability of arriving here was one. Given an ensemble of possible initial conditions, perhaps the trajectory was extraordinarily rare. Under a genuinely stochastic interpretation of quantum mechanics, perhaps there were physical moments at which several futures really were possible. Under many-worlds, perhaps asking why this possibility occurred instead of another begins with a mistaken premise: the alternatives may have occurred too. </p> <p> Physics therefore makes the apparently simple statement </p> <div class="equation"> $$ \text{My life could have been different} $$ </div> <p> remarkably difficult to define. </p> <p> And yet I do not think this makes the feeling behind that statement meaningless. Quite the opposite. </p> <p> Whatever the ultimate ontology of the universe turns out to be, there is an undeniable asymmetry in how we experience our own lives. I can remember Halifax; I cannot remember Montreal. I possess records of decisions I have made and only imagined versions of the decisions I did not. I can trace some of the causal chain which produced the person writing these words, while enormous portions of that chain remain permanently invisible to me. </p> <p> Looking backward, I can identify moments that appear to divide my life cleanly into a before and an after. Some were decisions. Some were accidents. Some seemed insignificant when they occurred and acquired their importance only years later. And occasionally there are those stranger moments in which the transition is visible while it is happening—when you somehow recognize that the person entering the moment will not quite be the person who leaves it. </p> <p> Those are the moments I have called <em>alea iacta est</em>. </p> <p> But perhaps the metaphor has been misleading from the beginning. A human life is not one die cast once. It is an accumulation of events whose consequences become the conditions for everything that follows. The outcome of one throw changes the table on which the next is made. By the time we arrive at the present, we are looking backward through an extraordinary causal structure of choices, accidents, people, places and physical events, only a fraction of which we will ever recognize as important. </p> <p> There are surely moments which changed my life that I cannot remember. There are probably moments I remember vividly which changed almost nothing. There are people whose smallest decisions altered my trajectory without either of us knowing it, and decisions made decades before I was born without which the present arrangement of matter I call myself would never have existed. </p> <p> This makes the present feel strange to me. </p> <p> Not miraculous in the statistical sense; I am no longer convinced that such a probability can even be defined without first making very careful assumptions about what counts as a possible history. Rather, the strangeness comes from its <em>specificity</em>. </p> <p> Of all the lives I can imagine having lived, I remember only this one. Of all the places I might imagine myself being, I am here. Of all the people I might imagine becoming, there is one person presently asking these questions. </p> <p> In two weeks, I will leave Halifax. </p> <p> I do not know whether the universe regards that event as a predetermined point on a worldline, one stochastic outcome among many, one branch among an enormous collection of decohered histories, or something which our present theories are not yet capable of describing completely. </p> <p> I only know what it looks like from here. </p> <p> The die is in my hand. </p>
+
 
